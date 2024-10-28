@@ -26,3 +26,26 @@ function checkCookies() {
     }
 }
 
+function saveUserInfo() {
+    const name = document.getElementById('name').value;
+    const whatsapp = document.getElementById('whatsapp').value;
+    const address = document.getElementById('address').value;
+
+    if (name && whatsapp && address) {
+        setCookie("name", name, 365);
+        setCookie("whatsapp", whatsapp, 365);
+        setCookie("address", address, 365);
+        document.getElementById('userModal').style.display = 'none';
+    } else {
+        alert("Silakan masukkan semua informasi.");
+    }
+}
+
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+
