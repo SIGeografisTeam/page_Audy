@@ -235,3 +235,31 @@ h2, h3 {
     color: #d9534f;
     border-bottom: 1px solid #d9534f;
 }
+
+/* Gaya untuk dropdown */
+.payment-method select {
+    background-color: #f0a500; /* Warna lembut untuk dropdown */
+    color: white; /* Warna teks */
+    border: none; /* Menghapus border default */
+    padding: 10px; /* Memberikan sedikit ruang di dalam dropdown */
+    font-size: 16px; /* Ukuran font */
+    border-radius: 5px; /* Membuat sudut dropdown melengkung */
+    transition: background-color 0.3s; /* Efek transisi saat mengubah warna */
+}
+
+/* Gaya saat kursor diarahkan ke dropdown */
+.payment-method select:hover {
+    background-color: #d68a00; /* Warna lebih gelap saat hover */
+}
+
+/* Gaya untuk pilihan dropdown */
+.payment-method select option {
+    background-color: #f0f0f0; /* Warna lembut untuk pilihan dropdown */
+    color: black; /* Warna teks untuk pilihan dropdown */
+}
+
+/* Gaya untuk pilihan dropdown saat hover */
+.payment-method select option:hover {
+    background-color: #007bff !; /* Warna biru saat hover pada pilihan dropdown */
+    color: white; /* Warna teks saat hover */
+}
