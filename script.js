@@ -131,7 +131,7 @@ function renderMenu(menuItems) {
         // Update WhatsApp link
         const whatsappLink = document.getElementById('whatsappLink');
         const message = `Saya ingin memesan:\n${orders.join('\n')}\n\nTotal: Rp ${total.toLocaleString()}\n\n${rek}\n\nNama: ${userName}\nNomor WhatsApp: ${userWhatsapp}\nAlamat: ${userAddress}`;
-        whatsappLink.href = `https://wa.me/628111269691?text=${encodeURIComponent(message)}`;
+        whatsappLink.href = `https://wa.me/62887435359524?text=${encodeURIComponent(message)}`;
     }
 
     document.getElementById('whatsappLink').addEventListener('click', function(event) {
@@ -161,7 +161,7 @@ function renderMenu(menuItems) {
         let paymentInfo = paymentMethod === "Transfer" ? rek : "Pembayaran akan dilakukan dengan metode COD.";
         
         const message = `Saya ingin memesan:\n${orders.map(order => `${order.name} x${order.quantity} - Rp ${order.price.toLocaleString()}`).join('\n')}\n\nTotal: Rp ${total.toLocaleString()}\n\n${paymentInfo}\n\nNama: ${userName}\nNomor WhatsApp: ${userWhatsapp}\nAlamat: ${userAddress}`;
-        const whatsappUrl = `https://wa.me/628111269691?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/62887435359524?text=${encodeURIComponent(message)}`;
     
         // Redirect to WhatsApp
         window.open(whatsappUrl, '_blank');
