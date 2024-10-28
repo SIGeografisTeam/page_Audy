@@ -238,7 +238,7 @@ h2, h3 {
 
 /* Gaya untuk dropdown */
 .payment-method select {
-    background-color: #f0a500; /* Warna lembut untuk dropdown */
+    background-color: #FF9D3D; /* Warna lembut untuk dropdown */
     color: white; /* Warna teks */
     border: none; /* Menghapus border default */
     padding: 10px; /* Memberikan sedikit ruang di dalam dropdown */
@@ -249,7 +249,7 @@ h2, h3 {
 
 /* Gaya saat kursor diarahkan ke dropdown */
 .payment-method select:hover {
-    background-color: #d68a00; /* Warna lebih gelap saat hover */
+    background-color: #EC8305; /* Warna lebih gelap saat hover */
 }
 
 /* Gaya untuk pilihan dropdown */
@@ -267,7 +267,8 @@ h2, h3 {
 .total-payment-wrapper {
     display: flex; /* Membuat elemen menjadi fleksibel untuk berdampingan */
     align-items: center; /* Memusatkan elemen secara vertikal */
-    justify-content: space-between; /* Membuat ruang di antara kedua elemen */
+    justify-content: center; /* Membuat ruang di antara kedua elemen */
+    gap: 20px; /* Memberikan jarak antar elemen */
     margin-bottom: 15px; /* Memberikan jarak ke elemen di bawahnya */
 }
 
@@ -277,4 +278,10 @@ h2, h3 {
 
 .centered-text {
     text-align: center; /* Menempatkan teks "Pesanan Anda" di tengah */
+}
+
+.menu-item:hover {
+    background-color: #FFCF9D; /* Warna background saat hover */
+    transform: scale(1.05); /* Sedikit memperbesar card saat hover */
+    cursor: pointer; /* Ubah cursor menjadi pointer saat hover */
 }
