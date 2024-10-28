@@ -263,3 +263,18 @@ h2, h3 {
     background-color: #007bff !; /* Warna biru saat hover pada pilihan dropdown */
     color: white; /* Warna teks saat hover */
 }
+
+.total-payment-wrapper {
+    display: flex; /* Membuat elemen menjadi fleksibel untuk berdampingan */
+    align-items: center; /* Memusatkan elemen secara vertikal */
+    justify-content: space-between; /* Membuat ruang di antara kedua elemen */
+    margin-bottom: 15px; /* Memberikan jarak ke elemen di bawahnya */
+}
+
+.payment-method {
+    margin-left: 20px; /* Jarak antara Total dan Pilih Metode Pembayaran */
+}
+
+.centered-text {
+    text-align: center; /* Menempatkan teks "Pesanan Anda" di tengah */
+}
