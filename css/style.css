@@ -238,7 +238,7 @@ h2, h3 {
 
 /* Gaya untuk dropdown */
 .payment-method select {
-    background-color: #FF9D3D; /* Warna lembut untuk dropdown */
+    background-color: #FFA500; /* Warna lembut untuk dropdown */
     color: white; /* Warna teks */
     border: none; /* Menghapus border default */
     padding: 10px; /* Memberikan sedikit ruang di dalam dropdown */
@@ -249,7 +249,7 @@ h2, h3 {
 
 /* Gaya saat kursor diarahkan ke dropdown */
 .payment-method select:hover {
-    background-color: #EC8305; /* Warna lebih gelap saat hover */
+    background-color:  #FF8C00; /* Warna lebih gelap saat hover */
 }
 
 /* Gaya untuk pilihan dropdown */
@@ -284,4 +284,20 @@ h2, h3 {
     background-color: #FFCF9D; /* Warna background saat hover */
     transform: scale(1.05); /* Sedikit memperbesar card saat hover */
     cursor: pointer; /* Ubah cursor menjadi pointer saat hover */
+}
+
+.qty-btn {
+    background-color: #FFA500; /* Warna oranye */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Efek halus saat perubahan warna */
+}
+
+/* Warna tombol saat di-hover */
+.qty-btn:hover {
+    background-color: #FF8C00; /* Oranye lebih gelap untuk efek hover */
 }
