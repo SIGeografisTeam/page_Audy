@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pasakan Ambu</title>
     <link rel="stylesheet" href="/css/style.css">
     <!-- Script tag untuk menghubungkan ke script.js -->
-    <script src="script.js"></script>
-    
+    <script type="module" src="script.js"></script>
+
     <!-- Favicon -->
     <link rel="icon" href="./bg/favicon.ico" type="image/x-icon">
 
     <!-- Meta Tags for Open Graph -->
     <meta property="og:title" content="Pasakan Ambu" />
-    <meta property="og:description" content="Nikmati berbagai pilihan menu makanan lezat di Pasakan Ambu. Mulai dari Jengkol Rendang, Babat Serundeng, dan masih banyak lagi!" />
+    <meta property="og:description"
+        content="Nikmati berbagai pilihan menu makanan lezat di Pasakan Ambu. Mulai dari Jengkol Rendang, Babat Serundeng, dan masih banyak lagi!" />
     <meta property="og:image" content="./bg/gambar.jpg" />
     <meta property="og:url" content="./page" />
     <meta property="og:type" content="website" />
@@ -22,9 +24,13 @@
     <!-- Meta Tags for Twitter (Optional) -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Pasakan Ambu">
-    <meta name="twitter:description" content="Nikmati berbagai pilihan menu makanan lezat di Pasakan Ambu. Mulai dari Jengkol Rendang, Babat Serundeng, dan masih banyak lagi!">
+    <meta name="twitter:description"
+        content="Nikmati berbagai pilihan menu makanan lezat di Pasakan Ambu. Mulai dari Jengkol Rendang, Babat Serundeng, dan masih banyak lagi!">
     <meta name="twitter:image" content="./page/bg/gambar.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;600&display=swap" rel="stylesheet"> <!-- Tambahkan link ini -->
 </head>
+
 <body>
     <header class="header">
         <img src="./bg/banner.jpg" alt="Banner" class="banner-image">
@@ -33,7 +39,7 @@
         <h2>Form Pemesanan</h2>
         <div id="menuGrid" class="menu-grid">
             <!-- Elemen menu akan diisi oleh JavaScript -->
-        </div>        
+        </div>
         <div class="total-container">
             <h2>Total: Rp <span id="totalPrice">0</span></h2>
             <div class="payment-method">
@@ -72,8 +78,5 @@
             <p>Isi Menu dan harga merupakan tangung jawab tenant | <a href="#">Laporkan Penyalahgunaan</a></p>
         </div>
     </footer>
-    
-
-    <script src="/static/script.js" type="module"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, 'signika', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -40,6 +40,10 @@ h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #333;
+}
+
+h2, h3 {
+    font-family: 'Signika', sans-serif !important; /* Atur font untuk heading */
 }
 
 .menu-grid {
