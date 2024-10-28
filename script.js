@@ -183,3 +183,17 @@ function renderMenu(menuItems) {
             console.log('API Response:', response);
         });
     });
+
+    function getLastPathSegment() {
+        // Ambil pathname dari URL
+        let pathname = window.location.pathname;
+    
+        // Hapus leading slash dan trailing slash jika ada
+        pathname = pathname.replace(/^\/|\/$/g, '');
+    
+        // Pisahkan pathname menjadi bagian-bagian
+        let parts = pathname.split('/');
+    
+        // Ambil bagian terakhir dari URL
+        return parts[parts.length - 1];
+    }
