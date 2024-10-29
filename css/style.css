@@ -305,17 +305,60 @@ h2, h3 {
 .navbar {
     background-color: #333;
     padding: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: relative;
 }
+
 .navbar-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 .navbar-logo {
     color: #fff;
     font-size: 24px;
     text-decoration: none;
     font-weight: bold;
+    font-family: 'Signika', sans-serif;
+    position: absolute; /* Mengatur posisi absolut */
+    left: 20px; /* Menempatkan di kiri */
+    top: 10px; /* Menempatkan di atas */
+}
+
+.navbar-search {
+    display: flex;
+    align-items: center;
+}
+
+#searchInput {
+    padding: 8px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    width: 200px;
+    transition: width 0.4s ease-in-out;
+}
+
+#searchInput:focus {
+    width: 250px; /* Lebar lebih besar saat fokus */
+}
+
+.navbar-search button {
+    padding: 8px 12px;
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.navbar-search button:hover {
+    background-color: #e74c3c; /* Warna lebih gelap saat dihover */
 }

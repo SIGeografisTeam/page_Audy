@@ -197,3 +197,15 @@ function renderMenu(menuItems) {
         // Ambil bagian terakhir dari URL
         return parts[parts.length - 1];
     }
+
+    function searchMenu() {
+        const query = document.getElementById("searchInput").value;
+        if (query) {
+            console.log("Hasil pencarian untuk:", query);
+            alert(`Hasil pencarian untuk: ${query}`);
+            // Tambahkan logika pencarian sesuai kebutuhan, seperti mengarahkan ke halaman hasil
+        } else {
+            alert("Masukkan kata kunci pencarian.");
+        }
+    }
+    
