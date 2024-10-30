@@ -356,7 +356,8 @@ h3 {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    display: flex;
 }
 
 .navbar-logo {
@@ -379,9 +380,11 @@ h3 {
     color: white;
     text-decoration: none;
     /* Menghilangkan garis bawah */
-    margin-left: 20px;
+    margin-left: auto;
     /* Memberikan jarak dari search */
     font-weight: 600;
+    display: flex;
+    align-items: center;
 }
 
 .navbar-link:hover {
@@ -392,6 +395,12 @@ h3 {
 .navbar-search {
     display: flex;
     align-items: center;
+}
+
+.form-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px; /* Jarak antara ikon dan teks */
 }
 
 #searchInput {
