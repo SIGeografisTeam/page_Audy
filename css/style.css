@@ -375,17 +375,20 @@ h3 {
     /* Menempatkan di atas */
 }
 
+.navbar-logo:hover {
+    color: #f0f0f0;
+}
+
 /* Tambahkan CSS untuk link "Form Pemesanan" */
 .navbar-link {
     font-family: 'Signika', sans-serif;
     color: white;
     text-decoration: none;
     /* Menghilangkan garis bawah */
-    margin-left: 30px;
+    margin-left: 150px;
     /* Memberikan jarak dari search */
     font-weight: 600;
     display: flex;
-    align-items: center;
     padding: 0 10px;
 }
 
