@@ -1,5 +1,6 @@
 * {
-    box-sizing: border-box; /* Pastikan padding dan border termasuk dalam ukuran elemen */
+    box-sizing: border-box;
+    /* Pastikan padding dan border termasuk dalam ukuran elemen */
 }
 
 body {
@@ -14,15 +15,18 @@ body {
     background-color: #ffffff;
     padding: 10px 20px;
     text-align: center;
-    border-radius: 20px; /* Membuat sisi header membulat */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan */
+    border-radius: 20px;
+    /* Membuat sisi header membulat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Menambahkan bayangan */
 }
 
 .banner-image {
     max-width: 100%;
     height: auto;
     margin-top: 10px;
-    border-radius: 20px; /* Membuat sisi banner membulat */
+    border-radius: 20px;
+    /* Membuat sisi banner membulat */
 }
 
 .main-container {
@@ -30,9 +34,12 @@ body {
     max-width: 1200px;
     padding: 20px;
     background-color: #ffffff;
-    margin: 20px auto; /* Menggunakan margin auto untuk membuat elemen di tengah */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan untuk efek visual */
-    border-radius: 10px; /* Opsional: menambahkan border-radius untuk tampilan lebih lembut */
+    margin: 20px auto;
+    /* Menggunakan margin auto untuk membuat elemen di tengah */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    /* Tambahkan bayangan untuk efek visual */
+    border-radius: 10px;
+    /* Opsional: menambahkan border-radius untuk tampilan lebih lembut */
 }
 
 
@@ -42,14 +49,17 @@ h2 {
     color: #333;
 }
 
-h2, h3 {
-    font-family: 'Signika', sans-serif !important; /* Atur font untuk heading */
+h2,
+h3 {
+    font-family: 'Signika', sans-serif !important;
+    /* Atur font untuk heading */
 }
 
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px 10px; /* Mengatur gap antara baris dan kolom */
+    gap: 20px 10px;
+    /* Mengatur gap antara baris dan kolom */
     margin-bottom: 20px;
 }
 
@@ -68,14 +78,18 @@ h2, h3 {
 
 .menu-footer {
     display: flex;
-    flex-direction: column; /* Ubah tata letak menjadi kolom */
-    align-items: center; /* Atur agar konten berada di tengah */
+    flex-direction: column;
+    /* Ubah tata letak menjadi kolom */
+    align-items: center;
+    /* Atur agar konten berada di tengah */
     justify-content: center;
 }
 
 .price {
-    margin-bottom: 10px; /* Beri jarak antara harga dan kuantitas */
-    font-size: 16px; /* Sesuaikan ukuran font jika diperlukan */
+    margin-bottom: 10px;
+    /* Beri jarak antara harga dan kuantitas */
+    font-size: 16px;
+    /* Sesuaikan ukuran font jika diperlukan */
 }
 
 .quantity-controls {
@@ -128,7 +142,8 @@ h2, h3 {
 }
 
 #orderList {
-    padding: 0 20px; /* Menambahkan padding kiri dan kanan */
+    padding: 0 20px;
+    /* Menambahkan padding kiri dan kanan */
     margin-top: 20px;
 }
 
@@ -238,68 +253,93 @@ h2, h3 {
 
 /* Gaya untuk dropdown */
 .payment-method select {
-    background-color: #FFA500; /* Warna lembut untuk dropdown */
-    color: white; /* Warna teks */
-    border: none; /* Menghapus border default */
-    padding: 10px; /* Memberikan sedikit ruang di dalam dropdown */
-    font-size: 16px; /* Ukuran font */
-    border-radius: 5px; /* Membuat sudut dropdown melengkung */
-    transition: background-color 0.3s; /* Efek transisi saat mengubah warna */
+    background-color: #FFA500;
+    /* Warna lembut untuk dropdown */
+    color: white;
+    /* Warna teks */
+    border: none;
+    /* Menghapus border default */
+    padding: 10px;
+    /* Memberikan sedikit ruang di dalam dropdown */
+    font-size: 16px;
+    /* Ukuran font */
+    border-radius: 5px;
+    /* Membuat sudut dropdown melengkung */
+    transition: background-color 0.3s;
+    /* Efek transisi saat mengubah warna */
 }
 
 /* Gaya saat kursor diarahkan ke dropdown */
 .payment-method select:hover {
-    background-color:  #FF8C00; /* Warna lebih gelap saat hover */
+    background-color: #FF8C00;
+    /* Warna lebih gelap saat hover */
 }
 
 /* Gaya untuk pilihan dropdown */
 .payment-method select option {
-    background-color: #f0f0f0; /* Warna lembut untuk pilihan dropdown */
-    color: black; /* Warna teks untuk pilihan dropdown */
+    background-color: #f0f0f0;
+    /* Warna lembut untuk pilihan dropdown */
+    color: black;
+    /* Warna teks untuk pilihan dropdown */
 }
 
 /* Gaya untuk pilihan dropdown saat hover */
 .payment-method select option:hover {
-    background-color: #007bff !; /* Warna biru saat hover pada pilihan dropdown */
-    color: white; /* Warna teks saat hover */
+    background-color: #007bff !;
+    /* Warna biru saat hover pada pilihan dropdown */
+    color: white;
+    /* Warna teks saat hover */
 }
 
 .total-payment-wrapper {
-    display: flex; /* Membuat elemen menjadi fleksibel untuk berdampingan */
-    align-items: center; /* Memusatkan elemen secara vertikal */
-    justify-content: center; /* Membuat ruang di antara kedua elemen */
-    gap: 20px; /* Memberikan jarak antar elemen */
-    margin-bottom: 15px; /* Memberikan jarak ke elemen di bawahnya */
+    display: flex;
+    /* Membuat elemen menjadi fleksibel untuk berdampingan */
+    align-items: center;
+    /* Memusatkan elemen secara vertikal */
+    justify-content: center;
+    /* Membuat ruang di antara kedua elemen */
+    gap: 20px;
+    /* Memberikan jarak antar elemen */
+    margin-bottom: 15px;
+    /* Memberikan jarak ke elemen di bawahnya */
 }
 
 .payment-method {
-    margin-left: 20px; /* Jarak antara Total dan Pilih Metode Pembayaran */
+    margin-left: 20px;
+    /* Jarak antara Total dan Pilih Metode Pembayaran */
 }
 
 .centered-text {
-    text-align: center; /* Menempatkan teks "Pesanan Anda" di tengah */
+    text-align: center;
+    /* Menempatkan teks "Pesanan Anda" di tengah */
 }
 
 .menu-item:hover {
-    background-color: #FFCF9D; /* Warna background saat hover */
-    transform: scale(1.05); /* Sedikit memperbesar card saat hover */
-    cursor: pointer; /* Ubah cursor menjadi pointer saat hover */
+    background-color: #FFCF9D;
+    /* Warna background saat hover */
+    transform: scale(1.05);
+    /* Sedikit memperbesar card saat hover */
+    cursor: pointer;
+    /* Ubah cursor menjadi pointer saat hover */
 }
 
 .qty-btn {
-    background-color: #FFA500; /* Warna oranye */
+    background-color: #FFA500;
+    /* Warna oranye */
     color: white;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 4px;
     font-weight: bold;
-    transition: background-color 0.3s ease; /* Efek halus saat perubahan warna */
+    transition: background-color 0.3s ease;
+    /* Efek halus saat perubahan warna */
 }
 
 /* Warna tombol saat di-hover */
 .qty-btn:hover {
-    background-color: #FF8C00; /* Oranye lebih gelap untuk efek hover */
+    background-color: #FF8C00;
+    /* Oranye lebih gelap untuk efek hover */
 }
 
 .navbar {
@@ -318,15 +358,35 @@ h2, h3 {
     align-items: center;
     justify-content: center;
 }
+
 .navbar-logo {
     color: #fff;
     font-size: 24px;
     text-decoration: none;
     font-weight: bold;
     font-family: 'Signika', sans-serif;
-    position: absolute; /* Mengatur posisi absolut */
-    left: 20px; /* Menempatkan di kiri */
-    top: 10px; /* Menempatkan di atas */
+    position: absolute;
+    /* Mengatur posisi absolut */
+    left: 20px;
+    /* Menempatkan di kiri */
+    top: 10px;
+    /* Menempatkan di atas */
+}
+
+/* Tambahkan CSS untuk link "Form Pemesanan" */
+.navbar-link {
+    font-family: 'Signika', sans-serif;
+    color: white;
+    text-decoration: none;
+    /* Menghilangkan garis bawah */
+    margin-left: 20px;
+    /* Memberikan jarak dari search */
+    font-weight: 600;
+}
+
+.navbar-link:hover {
+    color: #f0f0f0;
+    /* Warna sedikit lebih terang saat di-hover */
 }
 
 .navbar-search {
@@ -345,7 +405,8 @@ h2, h3 {
 }
 
 #searchInput:focus {
-    width: 250px; /* Lebar lebih besar saat fokus */
+    width: 250px;
+    /* Lebar lebih besar saat fokus */
 }
 
 .navbar-search button {
@@ -360,5 +421,6 @@ h2, h3 {
 }
 
 .navbar-search button:hover {
-    background-color: #e74c3c; /* Warna lebih gelap saat dihover */
+    background-color: #e74c3c;
+    /* Warna lebih gelap saat dihover */
 }
