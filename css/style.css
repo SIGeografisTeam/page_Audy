@@ -188,7 +188,7 @@ h3 {
     border-radius: 10px;
     width: 90%;
     max-width: 400px;
-    text-align: center;
+    text-align: left;
 }
 
 /* Tombol di dalam modal */
@@ -202,17 +202,25 @@ h3 {
     cursor: pointer;
 }
 
+/* Atur label dan input agar tersusun vertikal dan tidak centered */
+.modal-content label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
 .modal-content button:hover {
     background-color: #0056b3;
 }
 
 .modal-content input[type="text"] {
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #ddd;
     box-sizing: border-box;
+    margin-bottom: 15px;
 }
 
 .site-footer {
@@ -455,4 +463,30 @@ h3 {
 .navbar-search button:hover {
     background-color: #e74c3c;
     /* Warna lebih gelap saat dihover */
+}
+
+/* Styling untuk tombol utama "Isi Informasi Pemesan" */
+button {
+    background-color: #ff7f50; /* Warna dasar, seperti coral */
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow agar tombol tampak mengangkat */
+}
+
+/* Efek hover untuk tombol */
+button:hover {
+    background-color: #ff6347; /* Warna lebih gelap saat dihover, seperti tomato */
+    transform: scale(1.05); /* Sedikit membesar */
+}
+
+/* Efek saat tombol ditekan */
+button:active {
+    background-color: #e5533c; /* Warna lebih gelap untuk efek ditekan */
+    transform: scale(0.98); /* Sedikit mengecil */
 }
