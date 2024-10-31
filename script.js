@@ -4,14 +4,21 @@ import { onClick } from 'https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.4/element.j
 
 onClick('buttonsimpaninfouser', saveUserInfo);
 
+// Event listener pada tombol simpan
 document.addEventListener('DOMContentLoaded', function () {
     checkCookies();
+
     fetch('./data/menu.json')
         .then(response => response.json())
         .then(data => {
             renderMenu(data);
         })
         .catch(error => console.error('Error loading menu:', error));
+
+    const saveButton = document.getElementById("buttonsimpaninfouser");
+    if (saveButton) {
+        saveButton.addEventListener("click", saveUserInfo);
+    }
 });
 
 function checkCookies() {
@@ -26,6 +33,7 @@ function checkCookies() {
     }
 }
 
+//fungsi untuk menyimpan informasi pengguna
 function saveUserInfo() {
     const name = document.getElementById('name').value;
     const whatsapp = document.getElementById('whatsapp').value;
@@ -209,20 +217,30 @@ function searchMenu() {
     }
 }
 
-// Ambil elemen modal
-const modal = document.getElementById("userModal");
+const saveButton = document.getElementById("buttonsimpaninfouser");
 
 // Fungsi untuk menampilkan modal
 function showModal() {
+    const modal = document.getElementById("userModal");
     modal.style.display = "block";
 }
 
 // Fungsi untuk menyembunyikan modal
 function hideModal() {
+    const modal = document.getElementById("userModal");
     modal.style.display = "none";
 }
+
+// Tambahkan event listener pada tombol simpan
+saveButton.addEventListener("click", hideModal);
 
 // Memanggil showModal() pada event yang diinginkan
 document.getElementById("buttonsimpaninfouser").addEventListener("click", hideModal);
 
-// Anda bisa menambahkan listener lain untuk menampilkan modal sesuai kebutuhan
+// Menutup modal saat klik di luar modal
+window.onclick = function (event) {
+    const modal = document.getElementById("userModal");
+    if (event.target == modal) {
+        hideModal();
+    }
+};
