@@ -42,6 +42,14 @@ body {
     /* Opsional: menambahkan border-radius untuk tampilan lebih lembut */
 }
 
+/* Style Form Pemesanan */
+.main-container h2 {
+    color: #548CA8; /* Biru lembut untuk heading */
+    font-size: 1.8em;
+    margin: 20px 0;
+    text-align: center;
+}
+
 
 h2 {
     text-align: center;
@@ -61,6 +69,39 @@ h3 {
     gap: 20px 10px;
     /* Mengatur gap antara baris dan kolom */
     margin-bottom: 20px;
+}
+
+.menu-grid .menu-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+}
+
+/* Card Produk */
+.menu-grid .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek shadow tipis */
+    border-radius: 10px; /* Membuat sudut kartu lebih halus */
+    padding: 10px;
+    background-color: #fff;
+    transition: transform 0.2s; /* Efek animasi saat hover */
+}
+
+.menu-grid .card:hover {
+    transform: translateY(-5px); /* Sedikit terangkat saat di-hover */
+}
+
+.menu-grid .card img {
+    border-radius: 8px; /* Membuat gambar dalam kartu sedikit rounded */
+}
+
+.menu-grid .menu-item button {
+    background-color: #A3D2CA; /* Warna hijau pastel */
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
 }
 
 .menu-item {
@@ -132,8 +173,12 @@ h3 {
 }
 
 .total-container {
+    background-color: #F1F1F1; /* Warna abu-abu pastel lembut */
     text-align: center;
-    margin-top: 40px;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .total-container h2 {
@@ -155,11 +200,12 @@ h3 {
 .whatsapp-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #25d366;
+    background-color: #88c9bf;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     font-size: 1em;
+    font-weight: bold;
 }
 
 .whatsapp-button:hover {
@@ -227,8 +273,15 @@ h3 {
     padding: 10px 0;
     text-align: center;
     font-size: 14px;
-    color: #333;
+    color: white;
     margin-top: 40px;
+    background-color: #88c9bf;
+    font-family: 'signika', sans-serif;
+}
+
+.site-footer a {
+    color: #FFE1A8; /* Warna kuning pastel untuk link */
+    text-decoration: underline;
 }
 
 .footer-content {
@@ -328,6 +381,10 @@ h3 {
     /* Memberikan jarak ke elemen di bawahnya */
 }
 
+.total-payment-wrapper h2 {
+    color: #548CA8;
+}
+
 .payment-method {
     margin-left: 20px;
     /* Jarak antara Total dan Pilih Metode Pembayaran */
@@ -367,8 +424,9 @@ h3 {
 }
 
 .navbar {
-    background-color: #333;
-    padding: 10px;
+    background-color: #a3d2ca;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
     color: white;
     display: flex;
     align-items: center;
@@ -393,7 +451,7 @@ h3 {
 }
 
 .navbar-logo:hover {
-    color: #f0f0f0;
+    color: #333;
 }
 
 /* Tambahkan CSS untuk link "Form Pemesanan" */
@@ -408,7 +466,7 @@ h3 {
 }
 
 .navbar-link:hover {
-    color: #f0f0f0;
+    color: #333;
     /* Warna sedikit lebih terang saat di-hover */
 }
 
@@ -442,7 +500,7 @@ h3 {
 
 .navbar-search button {
     padding: 8px 12px;
-    background-color: #ff5733;
+    background-color: #b2dfdb;
     color: white;
     border: none;
     border-radius: 0 5px 5px 0;
@@ -465,7 +523,7 @@ h3 {
 
 /* Styling untuk tombol utama "Isi Informasi Pemesan" */
 button {
-    background-color: #ff7f50; /* Warna dasar, seperti coral */
+    background-color: #b2dfdb; /* Warna dasar, seperti coral */
     color: white;
     padding: 12px 24px;
     font-size: 16px;
