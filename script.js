@@ -1,10 +1,10 @@
 import { postJSON } from 'https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.4/api.js';  // Sesuaikan path sesuai dengan lokasi file Anda
-import {onClick} from 'https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.4/element.js';
+import { onClick } from 'https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.4/element.js';
 
 
-onClick('buttonsimpaninfouser',saveUserInfo);
+onClick('buttonsimpaninfouser', saveUserInfo);
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     checkCookies();
     fetch('./data/menu.json')
         .then(response => response.json())
@@ -43,7 +43,7 @@ function saveUserInfo() {
 
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     let expires = "expires=" + d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
@@ -52,7 +52,7 @@ function getCookie(cname) {
     let name = cname + "=";
     let decodedCookie = decodeURIComponent(document.cookie);
     let ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
+    for (let i = 0; i < ca.length; i++) {
         let c = ca[i];
         while (c.charAt(0) == ' ') {
             c = c.substring(1);
@@ -86,126 +86,143 @@ function renderMenu(menuItems) {
 }
 
 //function changeQuantity(id, price, delta) {
-    window.changeQuantity = function(id, price, delta) {
-        var qtyInput = document.getElementById(id);
-        var currentValue = parseInt(qtyInput.value);
-        if (!isNaN(currentValue)) {
-            qtyInput.value = Math.max(0, currentValue + delta); // Tidak boleh kurang dari 0
-        } else {
-            qtyInput.value = 0;
-        }
-        calculateTotal(); // Perbarui total setiap kali kuantitas berubah
+window.changeQuantity = function (id, price, delta) {
+    var qtyInput = document.getElementById(id);
+    var currentValue = parseInt(qtyInput.value);
+    if (!isNaN(currentValue)) {
+        qtyInput.value = Math.max(0, currentValue + delta); // Tidak boleh kurang dari 0
+    } else {
+        qtyInput.value = 0;
     }
-    
-    function calculateTotal() {
-        const inputs = document.querySelectorAll('input[type="number"]');
-        let total = 0;
-        let orders = [];
-        const rek = "Pembayaran akan dilakukan dengan transfer ke rekening\nBCA 7750878347\nNedi Sopian";
-        const userName = getCookie("name");
-        const userWhatsapp = getCookie("whatsapp");
-        const userAddress = getCookie("address");
-    
-        inputs.forEach(input => {
-            const quantity = parseInt(input.value);
-            const price = parseInt(input.getAttribute('data-price'));
-            const name = input.getAttribute('data-name');
-    
-            if (quantity > 0) {
-                total += quantity * price;
-                orders.push(`${name} x${quantity} - Rp ${(quantity * price).toLocaleString()}`);
-            }
-        });
-    
-        document.getElementById('totalPrice').innerText = total.toLocaleString();
-    
-        // Update the order list
-        const orderList = document.getElementById('orderList');
-        orderList.innerHTML = '';
-        orders.forEach(order => {
-            const li = document.createElement('li');
-            li.innerText = order;
-            orderList.appendChild(li);
-        });
-    
-        // Update WhatsApp link
-        const whatsappLink = document.getElementById('whatsappLink');
-        const message = `Saya ingin memesan:\n${orders.join('\n')}\n\nTotal: Rp ${total.toLocaleString()}\n\n${rek}\n\nNama: ${userName}\nNomor WhatsApp: ${userWhatsapp}\nAlamat: ${userAddress}`;
-        whatsappLink.href = `https://wa.me/62887435359524?text=${encodeURIComponent(message)}`;
-    }
+    calculateTotal(); // Perbarui total setiap kali kuantitas berubah
+}
 
-    document.getElementById('whatsappLink').addEventListener('click', function(event) {
-        event.preventDefault();
-    
-        const paymentMethod = document.getElementById('paymentMethod').value; // Ambil metode pembayaran yang dipilih
-        const rek = "Pembayaran akan dilakukan dengan transfer ke rekening\nBCA 2820321726\nKiki Santi Noviana";
-        const userName = getCookie("name");
-        const userWhatsapp = getCookie("whatsapp");
-        const userAddress = getCookie("address");
-        
-        const inputs = document.querySelectorAll('input[type="number"]');
-        let orders = [];
-        let total = 0;
-    
-        inputs.forEach(input => {
-            const quantity = parseInt(input.value);
-            const price = parseInt(input.getAttribute('data-price'));
-            const name = input.getAttribute('data-name');
-    
-            if (quantity > 0) {
-                total += quantity * price;
-                orders.push({ name, quantity, price: quantity * price });
-            }
-        });
-    
-        let paymentInfo = paymentMethod === "Transfer" ? rek : "Pembayaran akan dilakukan dengan metode COD.";
-        
-        const message = `Saya ingin memesan:\n${orders.map(order => `${order.name} x${order.quantity} - Rp ${order.price.toLocaleString()}`).join('\n')}\n\nTotal: Rp ${total.toLocaleString()}\n\n${paymentInfo}\n\nNama: ${userName}\nNomor WhatsApp: ${userWhatsapp}\nAlamat: ${userAddress}`;
-        const whatsappUrl = `https://wa.me/62887435359524?text=${encodeURIComponent(message)}`;
-    
-        // Redirect to WhatsApp
-        window.open(whatsappUrl, '_blank');
-    
-        // POST request to API
-        const postData = {
-            orders: orders,
-            total: total,
-            user: {
-                name: userName,
-                whatsapp: userWhatsapp,
-                address: userAddress
-            },
-            payment: paymentInfo,
-            paymentMethod: paymentMethod // Tambahkan paymentMethod ke postData
-        };
-    
-        postJSON('https://asia-southeast2-awangga.cloudfunctions.net/jualin/data/order/'+getLastPathSegment(), 'login', '', postData, function(response) {
-            console.log('API Response:', response);
-        });
+function calculateTotal() {
+    const inputs = document.querySelectorAll('input[type="number"]');
+    let total = 0;
+    let orders = [];
+    const rek = "Pembayaran akan dilakukan dengan transfer ke rekening\nBCA 7750878347\nNedi Sopian";
+    const userName = getCookie("name");
+    const userWhatsapp = getCookie("whatsapp");
+    const userAddress = getCookie("address");
+
+    inputs.forEach(input => {
+        const quantity = parseInt(input.value);
+        const price = parseInt(input.getAttribute('data-price'));
+        const name = input.getAttribute('data-name');
+
+        if (quantity > 0) {
+            total += quantity * price;
+            orders.push(`${name} x${quantity} - Rp ${(quantity * price).toLocaleString()}`);
+        }
     });
 
-    function getLastPathSegment() {
-        // Ambil pathname dari URL
-        let pathname = window.location.pathname;
-    
-        // Hapus leading slash dan trailing slash jika ada
-        pathname = pathname.replace(/^\/|\/$/g, '');
-    
-        // Pisahkan pathname menjadi bagian-bagian
-        let parts = pathname.split('/');
-    
-        // Ambil bagian terakhir dari URL
-        return parts[parts.length - 1];
-    }
+    document.getElementById('totalPrice').innerText = total.toLocaleString();
 
-    function searchMenu() {
-        const query = document.getElementById("searchInput").value;
-        if (query) {
-            console.log("Hasil pencarian untuk:", query);
-            alert(`Hasil pencarian untuk: ${query}`);
-            // Tambahkan logika pencarian sesuai kebutuhan, seperti mengarahkan ke halaman hasil
-        } else {
-            alert("Masukkan kata kunci pencarian.");
+    // Update the order list
+    const orderList = document.getElementById('orderList');
+    orderList.innerHTML = '';
+    orders.forEach(order => {
+        const li = document.createElement('li');
+        li.innerText = order;
+        orderList.appendChild(li);
+    });
+
+    // Update WhatsApp link
+    const whatsappLink = document.getElementById('whatsappLink');
+    const message = `Saya ingin memesan:\n${orders.join('\n')}\n\nTotal: Rp ${total.toLocaleString()}\n\n${rek}\n\nNama: ${userName}\nNomor WhatsApp: ${userWhatsapp}\nAlamat: ${userAddress}`;
+    whatsappLink.href = `https://wa.me/62887435359524?text=${encodeURIComponent(message)}`;
+}
+
+document.getElementById('whatsappLink').addEventListener('click', function (event) {
+    event.preventDefault();
+
+    const paymentMethod = document.getElementById('paymentMethod').value; // Ambil metode pembayaran yang dipilih
+    const rek = "Pembayaran akan dilakukan dengan transfer ke rekening\nBCA 2820321726\nKiki Santi Noviana";
+    const userName = getCookie("name");
+    const userWhatsapp = getCookie("whatsapp");
+    const userAddress = getCookie("address");
+
+    const inputs = document.querySelectorAll('input[type="number"]');
+    let orders = [];
+    let total = 0;
+
+    inputs.forEach(input => {
+        const quantity = parseInt(input.value);
+        const price = parseInt(input.getAttribute('data-price'));
+        const name = input.getAttribute('data-name');
+
+        if (quantity > 0) {
+            total += quantity * price;
+            orders.push({ name, quantity, price: quantity * price });
         }
+    });
+
+    let paymentInfo = paymentMethod === "Transfer" ? rek : "Pembayaran akan dilakukan dengan metode COD.";
+
+    const message = `Saya ingin memesan:\n${orders.map(order => `${order.name} x${order.quantity} - Rp ${order.price.toLocaleString()}`).join('\n')}\n\nTotal: Rp ${total.toLocaleString()}\n\n${paymentInfo}\n\nNama: ${userName}\nNomor WhatsApp: ${userWhatsapp}\nAlamat: ${userAddress}`;
+    const whatsappUrl = `https://wa.me/62887435359524?text=${encodeURIComponent(message)}`;
+
+    // Redirect to WhatsApp
+    window.open(whatsappUrl, '_blank');
+
+    // POST request to API
+    const postData = {
+        orders: orders,
+        total: total,
+        user: {
+            name: userName,
+            whatsapp: userWhatsapp,
+            address: userAddress
+        },
+        payment: paymentInfo,
+        paymentMethod: paymentMethod // Tambahkan paymentMethod ke postData
+    };
+
+    postJSON('https://asia-southeast2-awangga.cloudfunctions.net/jualin/data/order/' + getLastPathSegment(), 'login', '', postData, function (response) {
+        console.log('API Response:', response);
+    });
+});
+
+function getLastPathSegment() {
+    // Ambil pathname dari URL
+    let pathname = window.location.pathname;
+
+    // Hapus leading slash dan trailing slash jika ada
+    pathname = pathname.replace(/^\/|\/$/g, '');
+
+    // Pisahkan pathname menjadi bagian-bagian
+    let parts = pathname.split('/');
+
+    // Ambil bagian terakhir dari URL
+    return parts[parts.length - 1];
+}
+
+function searchMenu() {
+    const query = document.getElementById("searchInput").value;
+    if (query) {
+        console.log("Hasil pencarian untuk:", query);
+        alert(`Hasil pencarian untuk: ${query}`);
+        // Tambahkan logika pencarian sesuai kebutuhan, seperti mengarahkan ke halaman hasil
+    } else {
+        alert("Masukkan kata kunci pencarian.");
     }
-    
+}
+
+// Ambil elemen modal
+const modal = document.getElementById("userModal");
+
+// Fungsi untuk menampilkan modal
+function showModal() {
+    modal.style.display = "block";
+}
+
+// Fungsi untuk menyembunyikan modal
+function hideModal() {
+    modal.style.display = "none";
+}
+
+// Memanggil showModal() pada event yang diinginkan
+document.getElementById("buttonsimpaninfouser").addEventListener("click", hideModal);
+
+// Anda bisa menambahkan listener lain untuk menampilkan modal sesuai kebutuhan
