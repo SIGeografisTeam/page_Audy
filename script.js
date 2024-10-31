@@ -17,7 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const saveButton = document.getElementById("buttonsimpaninfouser");
     if (saveButton) {
-        saveButton.addEventListener("click", saveUserInfo);
+        saveButton.addEventListener("click", () => {
+            saveUserInfo();
+            hideModal();
+        });
     }
 });
 
@@ -27,9 +30,9 @@ function checkCookies() {
     const userAddress = getCookie("address");
 
     if (!userName || !userWhatsapp || !userAddress) {
-        document.getElementById('userModal').style.display = 'flex';
+        showModal();
     } else {
-        document.getElementById('userModal').style.display = 'none';
+        hideModal();
     }
 }
 
@@ -43,7 +46,7 @@ function saveUserInfo() {
         setCookie("name", name, 365);
         setCookie("whatsapp", whatsapp, 365);
         setCookie("address", address, 365);
-        document.getElementById('userModal').style.display = 'none';
+        hideModal();
     } else {
         alert("Silakan masukkan semua informasi.");
     }
@@ -52,21 +55,18 @@ function saveUserInfo() {
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    let expires = "expires=" + d.toUTCString();
+    const expires = "expires=" + d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
 function getCookie(cname) {
-    let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
+    const name = cname + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
     for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
+        let c = ca[i].trim();
+        if (c.indexOf(name) === 0) {
+            return c.substring(name.length);
         }
     }
     return "";
@@ -244,3 +244,7 @@ window.onclick = function (event) {
         hideModal();
     }
 };
+
+// Tambahkan fungsi ke window agar dapat diakses di HTML
+window.showModal = showModal;
+window.hideModal = hideModal;
