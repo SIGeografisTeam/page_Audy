@@ -96,6 +96,21 @@ h3 {
     border-radius: 8px; /* Membuat gambar dalam kartu sedikit rounded */
 }
 
+/* Tombol +/- */
+.menu-grid .card .quantity-control button {
+    width: 30px; /* Memperkecil ukuran tombol */
+    height: 30px;
+    font-size: 16px;
+    border-radius: 50%; /* Membuat tombol bulat */
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.menu-grid .card .quantity-control button:hover {
+    background-color: #45a049; /* Warna saat di-hover */
+}
+
 .menu-grid .menu-item button {
     background-color: #A3D2CA; /* Warna hijau pastel */
     color: #fff;
@@ -173,16 +188,16 @@ h3 {
 }
 
 .total-container {
-    background-color: #F1F1F1; /* Warna abu-abu pastel lembut */
     text-align: center;
     margin-top: 20px;
     padding: 20px;
+    background: linear-gradient(to right, #f7f7f7, #e0f7fa); /* Gradient background */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .total-container h2 {
-    color: #d9534f;
+    color: #333;
     font-size: 1.5em;
 }
 
@@ -302,8 +317,8 @@ h3 {
 
 /* Styling untuk logo footer "jual.in.my.id" */
 .footer-logo-icon {
-    background-color: #ff7f50; /* Warna hijau untuk latar belakang */
-    color: white; /* Warna teks */
+    background-color: #FFCF9D; /* Warna hijau untuk latar belakang */
+    color: black; /* Warna teks */
     padding: 8px 16px; /* Padding untuk ruang di sekitar teks */
     font-size: 18px; /* Ukuran font */
     border-radius: 4px; /* Sedikit rounding pada sudut untuk tampilan lembut */
@@ -330,15 +345,13 @@ h3 {
 
 /* Gaya untuk dropdown */
 .payment-method select {
-    background-color: #ff7f50;
+    background-color: #ffffff;
     /* Warna lembut untuk dropdown */
-    color: white;
+    color: black;
     /* Warna teks */
-    border: none;
-    /* Menghapus border default */
-    padding: 10px;
+    padding: 8px 12px;
     /* Memberikan sedikit ruang di dalam dropdown */
-    font-size: 16px;
+    font-size: 1em;
     /* Ukuran font */
     border-radius: 5px;
     /* Membuat sudut dropdown melengkung */
@@ -346,9 +359,14 @@ h3 {
     /* Efek transisi saat mengubah warna */
 }
 
+.payment-method label {
+    font-weight: bold;
+    color: #555;
+}
+
 /* Gaya saat kursor diarahkan ke dropdown */
 .payment-method select:hover {
-    background-color: #ff6347;
+    background-color: #FFCF9D;
     /* Warna lebih gelap saat hover */
 }
 
@@ -537,8 +555,9 @@ button {
 
 /* Efek hover untuk tombol */
 button:hover {
-    background-color: #ff6347; /* Warna lebih gelap saat dihover, seperti tomato */
+    background-color: #FFCF9D; /* Warna lebih gelap saat dihover, seperti tomato */
     transform: scale(1.05); /* Sedikit membesar */
+    color: #333;
 }
 
 /* Efek saat tombol ditekan */
