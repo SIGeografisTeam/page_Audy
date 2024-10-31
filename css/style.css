@@ -247,17 +247,15 @@ h3 {
     margin-bottom: 5px;
 }
 
+/* Styling untuk logo footer "jual.in.my.id" */
 .footer-logo-icon {
-    width: 35px;
-    height: 35px;
-    background-color: #4caf50;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    font-size: 20px;
-    font-weight: bold;
+    background-color: #ff7f50; /* Warna hijau untuk latar belakang */
+    color: white; /* Warna teks */
+    padding: 8px 16px; /* Padding untuk ruang di sekitar teks */
+    font-size: 18px; /* Ukuran font */
+    border-radius: 4px; /* Sedikit rounding pada sudut untuk tampilan lembut */
+    display: inline-block; /* Mengatur latar belakang agar sesuai dengan panjang teks */
+    margin-top: 10px; /* Menambah jarak dari elemen lain */
 }
 
 .footer-content p {
