@@ -277,7 +277,7 @@ h3 {
 
 /* Gaya untuk dropdown */
 .payment-method select {
-    background-color: #FFA500;
+    background-color: #ff7f50;
     /* Warna lembut untuk dropdown */
     color: white;
     /* Warna teks */
@@ -295,7 +295,7 @@ h3 {
 
 /* Gaya saat kursor diarahkan ke dropdown */
 .payment-method select:hover {
-    background-color: #FF8C00;
+    background-color: #ff6347;
     /* Warna lebih gelap saat hover */
 }
 
@@ -348,7 +348,7 @@ h3 {
 }
 
 .qty-btn {
-    background-color: #FFA500;
+    background-color: #ff7f50;
     /* Warna oranye */
     color: white;
     border: none;
@@ -362,7 +362,7 @@ h3 {
 
 /* Warna tombol saat di-hover */
 .qty-btn:hover {
-    background-color: #FF8C00;
+    background-color: #ff6347;
     /* Oranye lebih gelap untuk efek hover */
 }
 
@@ -487,4 +487,18 @@ button:hover {
 button:active {
     background-color: #e5533c; /* Warna lebih gelap untuk efek ditekan */
     transform: scale(0.98); /* Sedikit mengecil */
+}
+
+#buttonTutupModal {
+    background-color: red;      /* Warna latar belakang merah */
+    color: white;               /* Warna teks putih */
+    border: none;               /* Menghilangkan border */
+    padding: 8px 16px;          /* Menambahkan padding */
+    cursor: pointer;            /* Menambahkan cursor pointer saat hover */
+    border-radius: 4px;         /* Membuat sudut tombol lebih melengkung */
+    font-size: 16px;            /* Ukuran font */
+}
+
+#buttonTutupModal:hover {
+    background-color: darkred;  /* Warna merah lebih gelap saat dihover */
 }
