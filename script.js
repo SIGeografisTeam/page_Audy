@@ -248,3 +248,19 @@ window.onclick = function (event) {
 // Tambahkan fungsi ke window agar dapat diakses di HTML
 window.showModal = showModal;
 window.hideModal = hideModal;
+
+function addItemToOrderList(menuName, quantity, price) {
+    const orderList = document.getElementById("orderList");
+    
+    // Buat elemen baru untuk item pesanan
+    const listItem = document.createElement("li");
+    
+    // Tambahkan tiga span untuk Menu, Satuan, dan Harga
+    listItem.innerHTML = `
+        <span>${menuName}</span>
+        <span>${quantity}</span>
+        <span>Rp ${price.toLocaleString()}</span>
+    `;
+    
+    orderList.appendChild(listItem);
+}

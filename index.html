@@ -43,19 +43,28 @@
         <div id="menuGrid" class="menu-grid">
             <!-- Elemen menu akan diisi oleh JavaScript -->
         </div>
+
+        <!-- Bagian Pesanan dan Total yang sudah diatur tata letaknya -->
         <div class="total-container">
+            <h3>Pesanan Anda:</h3>
+            <ul id="orderList">
+                <!-- Akan diisi dengan item pesanan secara dinamis -->
+                <!-- Struktur: <li>Menu | Satuan | Harga</li> -->
+            </ul>
+
+            <!--Struktur total dan metode pembayaran-->
             <div class="total-payment-wrapper">
                 <h2>Total: Rp <span id="totalPrice">0</span></h2>
-                <div class="payment-method">
-                    <label for="paymentMethod">Pilih Metode Pembayaran:</label>
-                    <select id="paymentMethod" name="paymentMethod">
-                        <option value="Transfer">Transfer</option>
-                        <option value="COD">COD</option>
-                    </select>
-                </div>
             </div>
-            <h3>Pesanan Anda:</h3>
-            <ul id="orderList"></ul>
+
+            <div class="payment-method">
+                <label for="paymentMethod">Pilih Metode Pembayaran:</label>
+                <select id="paymentMethod" name="paymentMethod">
+                    <option value="Transfer">Transfer</option>
+                    <option value="COD">COD</option>
+                </select>
+            </div>
+
             <a id="whatsappLink" href="#" class="whatsapp-button" target="_blank">Kirim Pesanan via WhatsApp</a>
         </div>
     </main>

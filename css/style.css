@@ -569,3 +569,29 @@ button:active {
 #buttonTutupModal:hover {
     background-color: darkred;  /* Warna merah lebih gelap saat dihover */
 }
+
+#orderList {
+    padding: 0;
+    list-style-type: none;
+}
+
+#orderList li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#orderList li span {
+    width: 30%; /* Mengatur lebar kolom agar proporsional */
+    text-align: center;
+}
+
+#orderList li span:first-child {
+    text-align: left; /* Kolom "Menu" rata kiri */
+}
+
+#orderList li span:last-child {
+    text-align: right; /* Kolom "Harga" rata kanan */
+}
+
