@@ -264,3 +264,23 @@ function addItemToOrderList(menuName, quantity, price) {
     
     orderList.appendChild(listItem);
 }
+
+function addOrderHeader() {
+    const orderList = document.getElementById("orderList");
+
+    // Cek apakah header sudah ditambahkan
+    if (!orderList.querySelector(".order-header")) {
+        const headerItem = document.createElement("li");
+        headerItem.classList.add("order-header");
+        headerItem.innerHTML = `
+            <span>Menu</span>
+            <span>Satuan</span>
+            <span>Harga</span>
+        `;
+        orderList.appendChild(headerItem);
+    }
+}
+
+// Panggil fungsi ini satu kali saat mengatur ulang order list
+addOrderHeader();
+

@@ -595,3 +595,9 @@ button:active {
     text-align: right; /* Kolom "Harga" rata kanan */
 }
 
+.order-header {
+    font-weight: bold;
+    text-align: center;
+    padding: 8px 0;
+    border-bottom: 2px solid #ddd;
+}
