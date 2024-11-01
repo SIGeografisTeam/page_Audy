@@ -104,7 +104,6 @@ window.changeQuantity = function (id, price, delta) {
     }
     calculateTotal(); // Perbarui total setiap kali kuantitas berubah
 }
-
 function calculateTotal() {
     const inputs = document.querySelectorAll('input[type="number"]');
     let total = 0;
@@ -114,6 +113,10 @@ function calculateTotal() {
     const userWhatsapp = getCookie("whatsapp");
     const userAddress = getCookie("address");
 
+    // Kosongkan orderList sebelum mengisi ulang
+    const orderList = document.getElementById('orderList');
+    orderList.innerHTML = ''; // Kosongkan order list
+
     inputs.forEach(input => {
         const quantity = parseInt(input.value);
         const price = parseInt(input.getAttribute('data-price'));
@@ -121,26 +124,20 @@ function calculateTotal() {
 
         if (quantity > 0) {
             total += quantity * price;
-            orders.push(`${name} x${quantity} - Rp ${(quantity * price).toLocaleString()}`);
+            // Tambahkan item ke daftar pesanan
+            addItemToOrderList(name, quantity, quantity * price);
         }
     });
 
+    // Tampilkan total
     document.getElementById('totalPrice').innerText = total.toLocaleString();
-
-    // Update the order list
-    const orderList = document.getElementById('orderList');
-    orderList.innerHTML = '';
-    orders.forEach(order => {
-        const li = document.createElement('li');
-        li.innerText = order;
-        orderList.appendChild(li);
-    });
 
     // Update WhatsApp link
     const whatsappLink = document.getElementById('whatsappLink');
     const message = `Saya ingin memesan:\n${orders.join('\n')}\n\nTotal: Rp ${total.toLocaleString()}\n\n${rek}\n\nNama: ${userName}\nNomor WhatsApp: ${userWhatsapp}\nAlamat: ${userAddress}`;
     whatsappLink.href = `https://wa.me/62887435359524?text=${encodeURIComponent(message)}`;
 }
+
 
 document.getElementById('whatsappLink').addEventListener('click', function (event) {
     event.preventDefault();
@@ -251,17 +248,21 @@ window.hideModal = hideModal;
 
 function addItemToOrderList(menuName, quantity, price) {
     const orderList = document.getElementById("orderList");
-    
+
+    // Panggil fungsi ini satu kali saat mengatur ulang order list
+    addOrderHeader();
+
+
     // Buat elemen baru untuk item pesanan
     const listItem = document.createElement("li");
-    
+
     // Tambahkan tiga span untuk Menu, Satuan, dan Harga
     listItem.innerHTML = `
         <span>${menuName}</span>
         <span>${quantity}</span>
         <span>Rp ${price.toLocaleString()}</span>
     `;
-    
+
     orderList.appendChild(listItem);
 }
 
@@ -281,6 +282,4 @@ function addOrderHeader() {
     }
 }
 
-// Panggil fungsi ini satu kali saat mengatur ulang order list
-addOrderHeader();
 
